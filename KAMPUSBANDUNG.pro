@@ -1,21 +1,71 @@
 /* Knowledge Base */
-os(ios):-
-    fear_technology(ya),
-    daddy_rich(ya).
-os(chrome):-
-    fear_technology(ya),
-    daddy_rich(tidak).
-os(windows):-
-    fear_technology(tidak),
-    care_privacy(tidak).
-os(ubuntu):-
-    fear_technology(tidak),
-    care_privacy(ya),
-    have_life(ya).
-os(kali):-
-    fear_technology(tidak),
-    care_privacy(ya),
-    have_life(tidak).
+kampus(unpas):-
+    anak_sultan(no),
+    anak_soleh(no),
+    bandung_coret_mau(no),
+    gedung_kampus_mewah(no).
+kampus(unikom):-
+    anak_sultan(no),
+    anak_soleh(no),
+    bandung_coret_mau(no),
+    gedung_kampus_mewah(yes).
+kampus(unpad):-
+    anak_sultan(no),
+    anak_soleh(no),
+    bandung_coret_mau(yes),
+    jalannya_macet_mau(no),
+    mau_cari_pacar(yes).
+kampus(ikopin):-
+    anak_sultan(no),
+    anak_soleh(no),
+    bandung_coret_mau(yes),
+    jalannya_macet_mau(no),
+    mau_cari_pacar(no).
+kampus(telkom):-
+    anak_sultan(no),
+    anak_soleh(no),
+    anak_soleh(yes),
+    ingin_merasakan_sejuknya_bandung(no),
+    bandung_coret_mau(yes),
+    jalannya_macet_mau(yes).
+kampus(unisba):-
+    anak_sultan(no),
+    anak_sultan(yes),
+    anak_soleh(yes),
+    ingin_merasakan_sejuknya_bandung(yes),
+    suka_party(no),
+    almamater_membuat_bangga(yes),
+    kamu_ambis(no).
+kampus(polban):-
+    anak_sultan(no),
+    anak_sultan(yes),
+    anak_soleh(yes),
+    ingin_merasakan_sejuknya_bandung(yes),
+    suka_party(no),
+    almamater_membuat_bangga(yes),
+    kamu_ambis(yes),
+    kamu_wibu(no).
+kampus(itb):-
+    anak_sultan(no),
+    anak_sultan(yes),
+    anak_soleh(yes),
+    ingin_merasakan_sejuknya_bandung(yes),
+    suka_party(no),
+    almamater_membuat_bangga(yes),
+    kamu_ambis(yes),
+    kamu_wibu(yes).
+kampus(itenas):-
+    anak_sultan(yes),
+    suka_party(no),
+    almamater_membuat_bangga(no).
+kampus(maranata):-
+    anak_sultan(yes),
+    suka_party(yes),
+    banyak_alumni_selebriti(no).
+kampus(unpar):-
+    anak_sultan(yes),
+    suka_party(yes),
+    banyak_alumni_selebriti(yes).
 
 /* Asking the user */
 anak_sultan(X):-
