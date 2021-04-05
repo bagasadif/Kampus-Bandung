@@ -69,44 +69,44 @@ kampus(unpar):-
 
 /* Asking the user */
 anak_sultan(X):-
-    menuask(anak_sultan, X, [ya, tidak]).
+    menuask(anak_sultan, X, [yes, no]).
 suka_party(X):-
-    menuask(suka_party, X, [ya,tidak]).
+    menuask(suka_party, X, [yes, no]).
 anak_soleh(X):-
-    menuask(anak_soleh, X, [ya, tidak]).
+    menuask(anak_soleh, X, [yes, no]).
 banyak_alumni_selebriti(X):-
-    menuask(banyak_alumni_selebriti, X, [ya, tidak]).
+    menuask(banyak_alumni_selebriti, X, [yes, no]).
 almamater_membuat_bangga(X):-
-    menuask(almamater_membuat_bangga, X, [ya,tidak]).
+    menuask(almamater_membuat_bangga, X, [yes, no]).
 ingin_merasakan_sejuknya_bandung(X):-
-    menuask(ingin_merasakan_sejuknya_bandung, X, [ya,tidak]).
+    menuask(ingin_merasakan_sejuknya_bandung, X, [yes, no]).
 bandung_coret_mau(X):-
-    menuask(bandung_coret_mau, X, [ya,tidak]).
+    menuask(bandung_coret_mau, X, [yes, no]).
 kamu_ambis(X):-
-    menuask(kamu_ambis, X, [ya,tidak]).
+    menuask(kamu_ambis, X, [yes, no]).
 jalannya_macet_mau(X):-
-    menuask(jalannya_macet_mau, X, [ya,tidak]).
+    menuask(jalannya_macet_mau, X, [yes, no]).
 gedung_kampus_mewah(X):-
-    menuask(gedung_kampus_mewah, X, [ya,tidak]).
+    menuask(gedung_kampus_mewah, X, [yes, no]).
 kamu_wibu(X):-
-    menuask(kamu_wibu, X, [ya,tidak]).
+    menuask(kamu_wibu, X, [yes, no]).
 mau_cari_pacar(X):-
-    menuask(mau_cari_pacar, X, [ya,tidak]).
+    menuask(mau_cari_pacar, X, [yes, no]).
 
 /* Menus for user */
 menuask(A, V, _):-
-    known(ya, A, V), % succeed if true
+    known(yes, A, V), % succeed if true
     !. % stop looking
 menuask(A, V, _):-
     known(_, A, V), % fail if false
     !,
     fail.
 menuask(A, V, MenuList) :-
-    write('Do you '), write(A), write('?'), nl,
+    write('Apakah kamu '), write(A), write('?'), nl,
     write(MenuList), nl,
     read(X),
     check_val(X, A, V, MenuList),
-    asserta( known(ya, A, X)),
+    asserta( known(yes, A, X)),
     X==V.
 
 /* Check input */
@@ -122,15 +122,15 @@ member(X, [X|_]).
 member(X, [_|T]):-member(X,T).
 
 /* Simple shell */
-top_goal(X):- os(X).
+top_goal(X):- kampus(X).
 
 solve:-
     abolish(known, 3),
     top_goal(X),
-    write('The answer is '), write(X), nl.
+    write('Rekomendasi kampus buat kamu adalah : '), write(X), nl.
 solve:-
     write('No answer found.'), nl.
-:-unknown(trace, fail).
+
 
 /* Command loop */
 go:-
@@ -142,7 +142,7 @@ go:-
     X == quit.
 
 greeting:-
-    write('This is the Choosing an OS Prolog Exsys.'), nl,
+    write('Program panduan memilih kampus di bandung.'), nl,
     write('Enter start or quit at the prompt.'), nl.
 
 /* Running Program */
@@ -156,3 +156,6 @@ do(X):-
     write(X),
     write('is not a legal command.'), nl,
     fail.
+
+/* handle undefined procedure */
+:- unknown(trace, fail).
