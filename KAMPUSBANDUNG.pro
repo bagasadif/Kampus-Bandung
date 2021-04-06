@@ -23,33 +23,38 @@ kampus(ikopin):-
     mau_cari_pacar(no).
 kampus(telkom):-
     anak_sultan(no),
-    ingin_merasakan_sejuknya_bandung(no),
+    anak_soleh(no),
     bandung_coret_mau(yes),
     jalannya_macet_mau(yes).
 kampus(unisba):-
+    anak_sultan(no),
     anak_soleh(yes),
-    ingin_merasakan_sejuknya_bandung(yes),
+    ingin_merasakan_sejuknya_bandung(yes).
+kampus(uin):-
+    anak_sultan(no),
+    anak_soleh(yes),
+    ingin_merasakan_sejuknya_bandung(no).
+kampus(widyatama):-
+    anak_sultan(yes),
     suka_party(no),
     almamater_membuat_bangga(yes),
     kamu_ambis(no).
+kampus(itenas):-
+    anak_sultan(yes),
+    suka_party(no),
+    almamater_membuat_bangga(no).
 kampus(polban):-
-    anak_soleh(yes),
-    ingin_merasakan_sejuknya_bandung(yes),
+    anak_sultan(yes),
     suka_party(no),
     almamater_membuat_bangga(yes),
     kamu_ambis(yes),
     kamu_wibu(no).
 kampus(itb):-
-    anak_soleh(yes),
-    ingin_merasakan_sejuknya_bandung(yes),
+    anak_sultan(yes),
     suka_party(no),
     almamater_membuat_bangga(yes),
     kamu_ambis(yes),
     kamu_wibu(yes).
-kampus(itenas):-
-    anak_sultan(yes),
-    suka_party(no),
-    almamater_membuat_bangga(no).
 kampus(maranata):-
     anak_sultan(yes),
     suka_party(yes),
