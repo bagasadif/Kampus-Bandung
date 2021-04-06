@@ -1,94 +1,97 @@
 /* Knowledge Base */
-kampus(unpas):-
-    anak_sultan(no),
-    anak_soleh(no),
-    bandung_coret_mau(no),
-    gedung_kampus_mewah(no).
-kampus(unikom):-
-    anak_sultan(no),
-    anak_soleh(no),
-    bandung_coret_mau(no),
-    gedung_kampus_mewah(yes).
-kampus(telkom):-
-    anak_sultan(no),
-    anak_soleh(no),
-    bandung_coret_mau(yes),
-    jalannya_macet_mau(yes).
-kampus(ikopin):-
-    anak_sultan(no),
-    anak_soleh(no),
-    bandung_coret_mau(yes),
-    jalannya_macet_mau(no),
-    mau_cari_pacar(no).
-kampus(unpad):-
-    anak_sultan(no),
-    anak_soleh(no),
-    bandung_coret_mau(yes),
-    jalannya_macet_mau(no),
-    mau_cari_pacar(yes).
-kampus(uin):-
-    anak_sultan(no),
-    anak_soleh(yes),
-    ingin_merasakan_sejuknya_bandung(no).
-kampus(unisba):-
-    anak_sultan(no),
-    anak_soleh(yes),
-    ingin_merasakan_sejuknya_bandung(yes).
-kampus(itenas):-
-    anak_sultan(yes),
-    suka_party(no),
-    almamater_membuat_bangga(no).
-kampus(widyatama):-
-    anak_sultan(yes),
-    suka_party(no),
-    almamater_membuat_bangga(yes),
-    kamu_ambis(no).
-kampus(polban):-
-    anak_sultan(yes),
-    suka_party(no),
-    almamater_membuat_bangga(yes),
-    kamu_ambis(yes),
-    kamu_wibu(no).
-kampus(itb):-
-    anak_sultan(yes),
-    suka_party(no),
-    almamater_membuat_bangga(yes),
-    kamu_ambis(yes),
-    kamu_wibu(yes).
-kampus(maranata):-
-    anak_sultan(yes),
-    suka_party(yes),
-    banyak_alumni_selebriti(no).
+kampus(kerja_aja):-
+    mau_kuliah(no).
+
 kampus(unpar):-
-    anak_sultan(yes),
-    suka_party(yes),
-    banyak_alumni_selebriti(yes).
+    mau_kuliah(yes),
+    anak_sultan(yes).
+
+kampus(uin):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(yes).
+
+kampus(unpas):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(no).
+
+kampus(itb):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(yes).
+
+kampus(unjani):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(no),
+    ingin_merasakan_sejuknya_bandung(no).
+
+kampus(upi):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(no),
+    ingin_merasakan_sejuknya_bandung(yes),
+    kuliah_di_bandung_coret_gapapa(no).
+
+kampus(telkom):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(no),
+    ingin_merasakan_sejuknya_bandung(yes),
+    kuliah_di_bandung_coret_gapapa(yes),
+    mau_jalannya_macet(yes).
+
+kampus(unpad):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(no),
+    ingin_merasakan_sejuknya_bandung(yes),
+    kuliah_di_bandung_coret_gapapa(yes),
+    mau_jalannya_macet(no),
+    mau_cari_pacar(yes).
+
+kampus(ipdn):-
+    mau_kuliah(yes),
+    anak_sultan(no),
+    anak_soleh(no),
+    mau_punya_gedung_kampus_mewah(yes),
+    wibu(no),
+    ingin_merasakan_sejuknya_bandung(yes),
+    kuliah_di_bandung_coret_gapapa(yes),
+    mau_jalannya_macet(no),
+    mau_cari_pacar(no).
 
 /* Asking the user */
+mau_kuliah(X):-
+    menuask(mau_kuliah, X, [yes, no]).
 anak_sultan(X):-
     menuask(anak_sultan, X, [yes, no]).
 anak_soleh(X):-
     menuask(anak_soleh, X, [yes, no]).
-bandung_coret_mau(X):-
-    menuask(bandung_coret_mau, X, [yes, no]).
-gedung_kampus_mewah(X):-
-    menuask(gedung_kampus_mewah, X, [yes, no]).
-jalannya_macet_mau(X):-
-    menuask(jalannya_macet_mau, X, [yes, no]).
-mau_cari_pacar(X):-
-    menuask(mau_cari_pacar, X, [yes, no]).
-suka_party(X):-
-    menuask(suka_party, X, [yes, no]).
-almamater_membuat_bangga(X):-
-    menuask(almamater_membuat_bangga, X, [yes, no]).
+mau_punya_gedung_kampus_mewah(X):-
+    menuask(mau_punya_gedung_kampus_mewah, X, [yes, no]).
+wibu(X):-
+    menuask(wibu, X, [yes, no]).
 ingin_merasakan_sejuknya_bandung(X):-
     menuask(ingin_merasakan_sejuknya_bandung, X, [yes, no]).
-kamu_ambis(X):-
-    menuask(kamu_ambis, X, [yes, no]).
-kamu_wibu(X):-
-    menuask(kamu_wibu, X, [yes, no]).
-banyak_alumni_selebriti(X):-
-    menuask(banyak_alumni_selebriti, X, [yes, no]).
+kuliah_di_bandung_coret_gapapa(X):-
+    menuask(kuliah_di_bandung_coret_gapapa, X, [yes, no]).
+mau_jalannya_macet(X):-
+    menuask(mau_jalannya_macet, X, [yes, no]).
+mau_cari_pacar(X):-
+    menuask(mau_cari_pacar, X, [yes, no]).
 
 
 /* Menus for user */
@@ -100,7 +103,7 @@ menuask(A, V, _):-
     !,
     fail.
 menuask(A, V, MenuList) :-
-    write(A), write('?'), nl,
+    write('Apakah_kamu_'), write(A), write('?'), nl,
     write(MenuList), nl,
     read(X),
     check_val(X, A, V, MenuList),
@@ -125,7 +128,7 @@ top_goal(X):- kampus(X).
 solve:-
     abolish(known, 3),
     top_goal(X),
-    write('Rekomendasi kampus buat kamu adalah : '), write(X), nl.
+    write('Rekomendasi buat kamu adalah : '), write(X), nl.
 solve:-
     write('No answer found.'), nl.
 
