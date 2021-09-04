@@ -1,5 +1,5 @@
-# kampus-bandung
-Swi-prolog untuk memilih kampus di Bandung
+# Kampus-Bandung
+Program SWI-Prolog untuk memilih kampus di Bandung
 
-## Tech Stack
+## Teknologi
 SWI-Prolog
